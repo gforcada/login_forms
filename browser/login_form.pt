@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="example">
+
+  <head>
+  </head>
+
+  <body>
+    <metal:main fill-slot="main">
+      <div id="login">
+
+        <h1 class="documentFirstHeading" i18n:translate="login_form_title">Login</h1>
+
+        <div tal:replace="structure view/contents" />
+
+        <div id="login-helpers">
+          <div>
+            <a id="forgot-password"
+               tal:attributes="href string:${portal_url}/password_resetter"
+               i18n:translate="prompt_password_forgotten_link">Forgot your password?</a>
+          </div>
+          <div>
+            <a id="join"
+               tal:attributes="href string:${portal_url}/registrator"
+               i18n:translate="prompt_not_registered_link">Not registered yet?</a>
+          </div>
+        </div>
+
+      </div>
+    </metal:main>
+  </body>
+</html>

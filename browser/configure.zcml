@@ -1,0 +1,49 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser">
+
+  <!-- Membersfolder -->
+
+  <browser:page
+    for="plone.app.layout.navigation.interfaces.INavigationRoot"
+    name="register"
+    permission="cmf.AddPortalMember"
+    class=".register.RegisterView"
+    />
+
+  <browser:page
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    name="login"
+    permission="zope2.View"
+    class=".login_form.LoginFormView"
+    />
+
+  <browser:page
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    name="login_failed"
+    permission="zope2.View"
+    class=".login_failed.LoginFailedView"
+    />
+
+  <browser:page
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    name="login_next"
+    permission="zope2.View"
+    class=".login_next.LoginNextView"
+    />
+
+  <browser:page
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    name="logout"
+    permission="zope2.View"
+    class=".logout.LogoutView"
+    />
+
+  <browser:page
+    for="*"
+    name="require_login"
+    permission="zope2.View"
+    class=".login_form.LoginForm"
+    />
+
+</configure>
